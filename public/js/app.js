@@ -449,15 +449,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_chat__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_Welcome__ = __webpack_require__(25);
 
 
 
 
 
-// import Welcome from './pages/welcome'
+//import VideoChat from './pages/VideoChat'
 
-__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Welcome, null), document.getElementById('root'));
+__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__pages_Welcome__["a" /* default */], null), document.getElementById('root'));
 
 /***/ }),
 /* 9 */
@@ -19013,7 +19013,9 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 23 */
+/* 23 */,
+/* 24 */,
+/* 25 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19031,29 +19033,48 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var Chat = function (_React$Component) {
-  _inherits(Chat, _React$Component);
+var Welcome = function (_React$Component) {
+  _inherits(Welcome, _React$Component);
 
-  function Chat() {
-    _classCallCheck(this, Chat);
+  function Welcome() {
+    _classCallCheck(this, Welcome);
 
-    return _possibleConstructorReturn(this, (Chat.__proto__ || Object.getPrototypeOf(Chat)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Welcome.__proto__ || Object.getPrototypeOf(Welcome)).apply(this, arguments));
   }
 
-  _createClass(Chat, [{
+  _createClass(Welcome, [{
     key: 'render',
     value: function render() {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'h1',
+        'div',
         null,
-        'Hello, ',
-        this.props.name
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'logo' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('p', null)
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'title' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('p', null)
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'subtitle' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            null,
+            'AdonisJs + React will make you feel confident about your code'
+          )
+        )
       );
     }
   }]);
 
-  return Chat;
+  return Welcome;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["a"] = (Welcome);
 
 /***/ })
 /******/ ]);

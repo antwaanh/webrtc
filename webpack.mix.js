@@ -13,3 +13,4 @@ let mix = require('laravel-mix')
 
 mix.setPublicPath('public')
   .react('resources/js/app.js', 'public/js')
+  //.react('resources/js/app.js', 'public/js')

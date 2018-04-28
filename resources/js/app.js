@@ -2,8 +2,8 @@
 
 import React from 'react'
 import ReactDom from 'react-dom'
-import Chat from './components/chat'
-// import Welcome from './pages/welcome'
+import Welcome from './pages/Welcome'
+//import VideoChat from './pages/VideoChat'
 
 ReactDom.render(
   <Welcome></Welcome>,
