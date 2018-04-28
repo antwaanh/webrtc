@@ -2,14 +2,10 @@
 
 import React from 'react'
 import ReactDom from 'react-dom'
+import Chat from './components/chat'
+// import Welcome from './pages/welcome'
 
 ReactDom.render(
-  <div>
-    <div className='logo'><p /></div>
-    <div className='title'><p /></div>
-    <div className='subtitle'>
-      <p>AdonisJs + React will make you feel confident about your code</p>
-    </div>
-  </div>,
+  <Welcome></Welcome>,
   document.getElementById('root')
 )
