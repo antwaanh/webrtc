@@ -1,9 +1,10 @@
 'use strict'
 
 import React from 'react'
+import Webcam from '../components/webcam'
 
 class Welcome extends React.Component {
-  render() {
+  render () {
     return (
       <div>
         <div className='logo'><p /></div>
@@ -11,8 +12,9 @@ class Welcome extends React.Component {
         <div className='subtitle'>
           <p>AdonisJs + React will make you feel confident about your code</p>
         </div>
+        <Webcam />
       </div>
-    );
+    )
   }
 }
 
