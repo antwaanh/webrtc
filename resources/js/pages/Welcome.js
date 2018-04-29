@@ -1,14 +1,13 @@
 'use strict'
 
 import React from 'react'
-import Webcam from '../components/webcam'
+import Camera from '../components/Camera'
 
 class Welcome extends React.Component {
+  static title: 'Welcome to WebRTC'
 
-  static title: "Welcome to WebRTC"
-  
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
   }
 
   render () {

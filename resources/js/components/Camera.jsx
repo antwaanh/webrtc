@@ -3,7 +3,7 @@
 import React, { Component } from 'react'
 import ReactDom from 'react-dom'
 
-class Webcam extends Component {
+class Camera extends Component {
   constructor (props) {
     super(props)
     this._video = React.createRef()
@@ -35,4 +35,4 @@ class Webcam extends Component {
   }
 }
 
-export default Webcam
+export default Camera
