@@ -1,4 +1,9 @@
 'use strict'
 
-export * from 'Webcam'
-export * from 'Welcome'
+import Webcam from './Webcam'
+import Welcome from './Welcome'
+
+export {
+  Webcam,
+  Welcome,
+}

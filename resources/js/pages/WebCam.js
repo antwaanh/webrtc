@@ -1,11 +1,9 @@
 'use strict'
 
 import React from 'react'
-import Nav from './../components/Nav'
 
 class Webcam extends React.Component {
   render() {
-    
     return (
       <div className='page'>
         <h1>Webcam</h1>
