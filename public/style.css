@@ -67,6 +67,16 @@ section:before {
   animation: slideUp 1s cubic-bezier(0.19, 1, 0.30, 1) 0.5s forwards;
 }
 
+.page {
+    color: #eee4fd;    
+}
+
+.subtitle a {
+    color: #BDB3CB;  }
+.subtitle a:hover {
+    color: #eee4fd;  }
+
+
 @keyframes slideUp {
   0% {
     transform: translateY(40px);

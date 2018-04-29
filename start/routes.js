@@ -16,5 +16,4 @@
 const Route = use('Route')
 
 Route.on('/welcome').render('welcome')
-//Route.on('/').render('main')
 Route.any('*', ({ view }) => view.render('main'))
