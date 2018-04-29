@@ -8,7 +8,6 @@ class Webcam extends React.Component {
     
     return (
       <div className='page'>
-        <div className='logo'><p /></div>
         <h1>Webcam</h1>
         <p>AdonisJs + React will make you feel confident about your code</p>
       </div>
