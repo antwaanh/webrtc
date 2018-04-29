@@ -17,16 +17,16 @@ window.store = {
   component: routes[window.location.pathname || '/'],
   goto(url, app) {
     return () => {
-      window.location = url
-      store.component = store.route[url]
+      let c = store.routes[url]
+      store.component = c
+      window.history.pushState(c.name, c.name, url);
       updateReact()
     }
   }
 }
 
-
-  
 window.updateReact = () => {
+  document.title = store.component.name
   ReactDom.render(
     <App component={store.component}></App>,
     document.getElementById('root')

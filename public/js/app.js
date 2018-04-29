@@ -570,14 +570,16 @@ window.store = {
   component: routes[window.location.pathname || '/'],
   goto: function goto(url, app) {
     return function () {
-      window.location = url;
-      store.component = store.route[url];
+      var c = store.routes[url];
+      store.component = c;
+      window.history.pushState(c.name, c.name, url);
       updateReact();
     };
   }
 };
 
 window.updateReact = function () {
+  document.title = store.component.name;
   __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_App__["a" /* default */], { component: store.component }), document.getElementById('root'));
 };
 

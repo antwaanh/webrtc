@@ -5,6 +5,8 @@ import Webcam from '../components/webcam'
 
 class Welcome extends React.Component {
 
+  static title: "Welcome to WebRTC"
+  
   constructor(props) {
     super(props);
   }
