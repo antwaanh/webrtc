@@ -1,7 +1,8 @@
 'use strict'
 
-export *  from './Nav'
-export * from './App'
-export * from './Chat'
-// export {Nav} from './Nav'
-// export * from './Nav'
+import Nav from './Nav'
+import App from './App'
+import Chat from './Chat'
+import Camera from './Camera'
+
+export { Nav, App, Chat, Camera }

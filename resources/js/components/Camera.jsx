@@ -1,7 +1,6 @@
 'use strict'
 
 import React, { Component } from 'react'
-import ReactDom from 'react-dom'
 
 class Camera extends Component {
   constructor (props) {

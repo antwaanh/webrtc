@@ -1,11 +1,9 @@
 'use strict'
 
 import React from 'react'
-import Nav from './../components/Nav'
-// import {Welcome, Webcam} from './../pages'
+import {Nav} from './../components'
 
 class App extends React.Component {
-  
   constructor(props) {
     super(props);
     this.state = {};

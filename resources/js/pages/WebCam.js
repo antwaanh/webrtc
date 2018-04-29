@@ -1,7 +1,6 @@
 'use strict'
 
 import React from 'react'
-import Nav from './../components/Nav'
 import Camera from './../components/Camera'
 
 class Webcam extends React.Component {

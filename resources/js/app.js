@@ -3,9 +3,8 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 
-import App from './components/App'
-import Welcome from './pages/Welcome'
-import Webcam from './pages/Webcam'
+import {App} from './components'
+import {Welcome, Webcam} from './pages'
 
 const routes = {
   '/': Welcome,
