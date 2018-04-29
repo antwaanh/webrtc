@@ -60,11 +60,25 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+if (false) {
+  module.exports = require('./cjs/react.production.min.js');
+} else {
+  module.exports = __webpack_require__(10);
+}
+
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -123,7 +137,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 /***/ }),
-/* 1 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -137,7 +151,7 @@ module.exports = invariant;
 
 
 
-var emptyFunction = __webpack_require__(2);
+var emptyFunction = __webpack_require__(3);
 
 /**
  * Similar to invariant but only logs a warning if the condition is not met.
@@ -191,7 +205,7 @@ if (true) {
 module.exports = warning;
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -231,20 +245,6 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-if (false) {
-  module.exports = require('./cjs/react.production.min.js');
-} else {
-  module.exports = __webpack_require__(9);
-}
-
 
 /***/ }),
 /* 4 */
@@ -381,9 +381,9 @@ module.exports = emptyObject;
 
 
 if (true) {
-  var invariant = __webpack_require__(0);
-  var warning = __webpack_require__(1);
-  var ReactPropTypesSecret = __webpack_require__(10);
+  var invariant = __webpack_require__(1);
+  var warning = __webpack_require__(2);
+  var ReactPropTypesSecret = __webpack_require__(11);
   var loggedTypeFailures = {};
 }
 
@@ -436,22 +436,72 @@ module.exports = checkPropTypes;
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(8);
+"use strict";
+
+
+function checkDCE() {
+  /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */
+  if (
+    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' ||
+    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function'
+  ) {
+    return;
+  }
+  if (true) {
+    // This branch is unreachable because this function is only called
+    // in production, but the condition is true only in development.
+    // Therefore if the branch is still here, dead code elimination wasn't
+    // properly applied.
+    // Don't change the message. React DevTools relies on it. Also make sure
+    // this message doesn't occur elsewhere in this function, or it will cause
+    // a false positive.
+    throw new Error('^_^');
+  }
+  try {
+    // Verify that the code above has been dead code eliminated (DCE'd).
+    __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);
+  } catch (err) {
+    // DevTools shouldn't crash React, no matter what.
+    // We should still report in case we break this code.
+    console.error(err);
+  }
+}
+
+if (false) {
+  // DCE check should happen before ReactDOM bundle executes so that
+  // DevTools can report bad minification during injection.
+  checkDCE();
+  module.exports = require('./cjs/react-dom.production.min.js');
+} else {
+  module.exports = __webpack_require__(12);
+}
 
 
 /***/ }),
 /* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(9);
+
+
+/***/ }),
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_App__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_Welcome__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_Webcam__ = __webpack_require__(33);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_chat__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_welcome__ = __webpack_require__(24);
+>>>>>>> 4598e45250c90d6ff2db583e8332f1d7cda76d74
 
 
 
@@ -459,6 +509,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+<<<<<<< HEAD
 
 window.store = {
   route: {
@@ -484,9 +535,12 @@ window.updateReact = function () {
 };
 
 updateReact();
+=======
+__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__pages_welcome__["a" /* default */], null), document.getElementById('root'));
+>>>>>>> 4598e45250c90d6ff2db583e8332f1d7cda76d74
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -508,10 +562,10 @@ if (true) {
 'use strict';
 
 var _assign = __webpack_require__(4);
-var invariant = __webpack_require__(0);
+var invariant = __webpack_require__(1);
 var emptyObject = __webpack_require__(5);
-var warning = __webpack_require__(1);
-var emptyFunction = __webpack_require__(2);
+var warning = __webpack_require__(2);
+var emptyFunction = __webpack_require__(3);
 var checkPropTypes = __webpack_require__(6);
 
 // TODO: this is special because it gets imported during build.
@@ -1907,7 +1961,7 @@ module.exports = react;
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1923,51 +1977,6 @@ module.exports = react;
 var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
-
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-function checkDCE() {
-  /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */
-  if (
-    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' ||
-    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function'
-  ) {
-    return;
-  }
-  if (true) {
-    // This branch is unreachable because this function is only called
-    // in production, but the condition is true only in development.
-    // Therefore if the branch is still here, dead code elimination wasn't
-    // properly applied.
-    // Don't change the message. React DevTools relies on it. Also make sure
-    // this message doesn't occur elsewhere in this function, or it will cause
-    // a false positive.
-    throw new Error('^_^');
-  }
-  try {
-    // Verify that the code above has been dead code eliminated (DCE'd).
-    __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);
-  } catch (err) {
-    // DevTools shouldn't crash React, no matter what.
-    // We should still report in case we break this code.
-    console.error(err);
-  }
-}
-
-if (false) {
-  // DCE check should happen before ReactDOM bundle executes so that
-  // DevTools can report bad minification during injection.
-  checkDCE();
-  module.exports = require('./cjs/react-dom.production.min.js');
-} else {
-  module.exports = __webpack_require__(12);
-}
 
 
 /***/ }),
@@ -1992,12 +2001,12 @@ if (true) {
   (function() {
 'use strict';
 
-var invariant = __webpack_require__(0);
-var React = __webpack_require__(3);
-var warning = __webpack_require__(1);
+var invariant = __webpack_require__(1);
+var React = __webpack_require__(0);
+var warning = __webpack_require__(2);
 var ExecutionEnvironment = __webpack_require__(13);
 var _assign = __webpack_require__(4);
-var emptyFunction = __webpack_require__(2);
+var emptyFunction = __webpack_require__(3);
 var checkPropTypes = __webpack_require__(6);
 var getActiveElement = __webpack_require__(14);
 var shallowEqual = __webpack_require__(15);
@@ -19039,13 +19048,11 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 23 */,
-/* 24 */,
-/* 25 */
+/* 23 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 
 
@@ -19056,6 +19063,53 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+var Chat = function (_React$Component) {
+  _inherits(Chat, _React$Component);
+
+  function Chat() {
+    _classCallCheck(this, Chat);
+
+    return _possibleConstructorReturn(this, (Chat.__proto__ || Object.getPrototypeOf(Chat)).apply(this, arguments));
+  }
+
+  _createClass(Chat, [{
+    key: 'render',
+    value: function render() {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'h1',
+        null,
+        'Hello, ',
+        this.props.name
+      );
+    }
+  }]);
+
+  return Chat;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+/* unused harmony default export */ var _unused_webpack_default_export = (Chat);
+
+/***/ }),
+/* 24 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_webcam__ = __webpack_require__(25);
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -19085,10 +19139,22 @@ var Welcome = function (_React$Component) {
           'Home'
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+<<<<<<< HEAD
           'p',
           null,
           'AdonisJs + React will make you feel confident about your code'
         )
+=======
+          'div',
+          { className: 'subtitle' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            null,
+            'AdonisJs + React will make you feel confident about your code'
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_webcam__["a" /* default */], null)
+>>>>>>> 4598e45250c90d6ff2db583e8332f1d7cda76d74
       );
     }
   }]);
@@ -19099,6 +19165,7 @@ var Welcome = function (_React$Component) {
 /* harmony default export */ __webpack_exports__["a"] = (Welcome);
 
 /***/ }),
+<<<<<<< HEAD
 /* 26 */,
 /* 27 */,
 /* 28 */
@@ -19107,6 +19174,16 @@ var Welcome = function (_React$Component) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+=======
+/* 25 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+>>>>>>> 4598e45250c90d6ff2db583e8332f1d7cda76d74
 
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -19119,6 +19196,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+<<<<<<< HEAD
 var Nav = function (_React$Component) {
   _inherits(Nav, _React$Component);
 
@@ -19269,11 +19347,55 @@ var Webcam = function (_React$Component) {
           'AdonisJs + React will make you feel confident about your code'
         )
       );
+=======
+
+var Webcam = function (_Component) {
+  _inherits(Webcam, _Component);
+
+  function Webcam(props) {
+    _classCallCheck(this, Webcam);
+
+    var _this = _possibleConstructorReturn(this, (Webcam.__proto__ || Object.getPrototypeOf(Webcam)).call(this, props));
+
+    _this._video = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createRef();
+    return _this;
+  }
+
+  _createClass(Webcam, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      console.log(this.props);
+      var video = this._video.current;
+      var constraints = { video: true };
+
+      navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
+        return video.srcObject = stream;
+      }).catch(function (error) {
+        return console.error('getUserMedia error: ', error);
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('video', {
+        ref: this._video,
+        style: {
+          maxWidth: '100%',
+          width: this.props.width || '100%',
+          height: this.props.height || 'auto'
+        },
+        autoPlay: 'true'
+      });
+>>>>>>> 4598e45250c90d6ff2db583e8332f1d7cda76d74
     }
   }]);
 
   return Webcam;
+<<<<<<< HEAD
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+=======
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+>>>>>>> 4598e45250c90d6ff2db583e8332f1d7cda76d74
 
 /* harmony default export */ __webpack_exports__["a"] = (Webcam);
 
